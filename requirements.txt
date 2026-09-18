@@ -1,0 +1,6 @@
+# Runtime dependencies only (Hugging Face Space).
+torch
+transformers
+gradio
+librosa
+numpy

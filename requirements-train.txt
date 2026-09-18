@@ -1,0 +1,7 @@
+# Training / testing dependencies (local only, not deployed to the Space).
+torch
+datasets
+scikit-learn
+numpy
+tqdm
+pytest
