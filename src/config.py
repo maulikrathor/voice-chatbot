@@ -40,3 +40,30 @@ UNK_ID = 1
 
 # CLINC150 "plus" split: 150 in-scope intents + 1 out-of-scope ("oos") class.
 NUM_CLASSES = 151
+
+# --- Model hyperparameters (BiLSTMClassifier, ARCHITECTURE.md section 4) ---
+
+EMBED_DIM = 128
+HIDDEN_DIM = 128
+DROPOUT = 0.3
+
+# --- Training hyperparameters --------------------------------------------
+
+BATCH_SIZE = 64
+LEARNING_RATE = 1e-3
+MAX_EPOCHS = 15
+EARLY_STOPPING_PATIENCE = 3
+GRAD_CLIP_NORM = 1.0
+
+# Candidate OOS confidence thresholds tried during threshold tuning on the
+# validation split: 0.00, 0.05, ..., 0.95.
+THRESHOLD_CANDIDATES = [round(i * 0.05, 2) for i in range(20)]
+
+# --- Artifact filenames (artifacts/) ---------------------------------------
+
+MODEL_FILENAME = "model.pt"
+VOCAB_FILENAME = "vocab.json"
+LABELS_FILENAME = "labels.json"
+CONFIG_FILENAME = "config.json"
+METRICS_FILENAME = "metrics.json"
+TRAINING_HISTORY_FILENAME = "training_history.json"

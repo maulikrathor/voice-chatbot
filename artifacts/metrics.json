@@ -1,0 +1,69 @@
+{
+  "threshold": 0.0,
+  "without_threshold": {
+    "in_scope_accuracy": 0.8893333333333333,
+    "oos_recall": 0.56,
+    "oos_precision": 0.8805031446540881,
+    "overall_accuracy": 0.8294545454545454,
+    "macro_f1": 0.855955717684576
+  },
+  "with_threshold": {
+    "in_scope_accuracy": 0.8893333333333333,
+    "oos_recall": 0.56,
+    "oos_precision": 0.8805031446540881,
+    "overall_accuracy": 0.8294545454545454,
+    "macro_f1": 0.855955717684576
+  },
+  "top_confused_pairs": [
+    {
+      "true": "oos",
+      "predicted": "book_hotel",
+      "count": 20
+    },
+    {
+      "true": "oos",
+      "predicted": "directions",
+      "count": 17
+    },
+    {
+      "true": "oos",
+      "predicted": "travel_suggestion",
+      "count": 14
+    },
+    {
+      "true": "oos",
+      "predicted": "greeting",
+      "count": 13
+    },
+    {
+      "true": "oos",
+      "predicted": "jump_start",
+      "count": 13
+    },
+    {
+      "true": "oos",
+      "predicted": "smart_home",
+      "count": 11
+    },
+    {
+      "true": "oos",
+      "predicted": "fun_fact",
+      "count": 11
+    },
+    {
+      "true": "oos",
+      "predicted": "income",
+      "count": 10
+    },
+    {
+      "true": "oos",
+      "predicted": "meal_suggestion",
+      "count": 10
+    },
+    {
+      "true": "oos",
+      "predicted": "order",
+      "count": 10
+    }
+  ]
+}

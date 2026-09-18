@@ -1,0 +1,21 @@
+{
+  "embed_dim": 128,
+  "hidden_dim": 128,
+  "dropout": 0.3,
+  "pad_id": 0,
+  "max_len": 32,
+  "min_freq": 2,
+  "vocab_size": 2971,
+  "num_classes": 151,
+  "oos_label_id": 42,
+  "threshold": 0.0,
+  "seed": 42,
+  "best_epoch": 7,
+  "batch_size": 64,
+  "learning_rate": 0.001,
+  "max_epochs": 15,
+  "early_stopping_patience": 3,
+  "grad_clip_norm": 1.0,
+  "dataset_source": "Loaded CLINC150 plus from Hugging Face Hub dataset 'clinc/clinc_oos'.",
+  "torch_version": "2.14.0+cpu"
+}
