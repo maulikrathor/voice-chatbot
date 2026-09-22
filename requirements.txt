@@ -4,3 +4,6 @@ transformers
 gradio
 librosa
 numpy
+# Windows has no IANA timezone database; zoneinfo needs tzdata to resolve
+# "Asia/Kolkata" (used by the time/date dynamic response handlers).
+tzdata

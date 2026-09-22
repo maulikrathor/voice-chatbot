@@ -165,27 +165,58 @@ def _predict_probs(model, loader):
     return np.concatenate(all_probs, axis=0), np.concatenate(all_labels, axis=0)
 
 
-def _tune_threshold(probs: np.ndarray, true_labels: np.ndarray, oos_label_id: int):
+def tune_threshold(probs: np.ndarray, true_labels: np.ndarray, oos_label_id: int):
     """
-    Search THRESHOLD_CANDIDATES for the threshold t that maximizes overall
-    accuracy when predictions with max softmax probability < t are
-    relabeled as oos. Ties are broken in favor of the lower threshold
-    (candidates are tried in ascending order and only strictly better
-    accuracy replaces the current best).
+    Search THRESHOLD_CANDIDATES for the confidence threshold t that
+    maximizes BALANCED accuracy on the validation split:
+
+        balanced_accuracy = 0.5 * (in_scope_accuracy + oos_recall)
+
+    where predictions with max softmax probability < t are relabeled oos
+    before computing both terms.
+
+    Why balanced accuracy, not plain overall accuracy: the validation
+    split has far more in-scope examples than oos examples (3,000 vs
+    100), so under plain overall accuracy, reclassifying any borderline
+    in-scope prediction as oos loses more accuracy on the large in-scope
+    group than it gains on the tiny oos group. That makes every threshold
+    "unprofitable" and tuning degenerates to t=0.00 (no thresholding at
+    all), leaving OOS recall low even though the model's confidence
+    scores do separate oos from in-scope reasonably well. Weighting
+    in-scope accuracy and oos recall equally removes that size imbalance
+    from the objective, so the tuned threshold actually improves oos
+    detection instead of always choosing "never flag oos".
+
+    Ties are broken in favor of the lower threshold (candidates are tried
+    in ascending order and only strictly better balanced accuracy
+    replaces the current best).
     """
     max_probs = probs.max(axis=1)
     raw_preds = probs.argmax(axis=1)
 
+    is_true_oos = true_labels == oos_label_id
+    is_true_in_scope = ~is_true_oos
+
     best_threshold = THRESHOLD_CANDIDATES[0]
-    best_acc = -1.0
+    best_balanced_acc = -1.0
     for t in THRESHOLD_CANDIDATES:
         preds = np.where(max_probs < t, oos_label_id, raw_preds)
-        acc = (preds == true_labels).mean()
-        if acc > best_acc:
-            best_acc = acc
+
+        in_scope_acc = (
+            (preds[is_true_in_scope] == true_labels[is_true_in_scope]).mean()
+            if is_true_in_scope.any()
+            else 0.0
+        )
+        oos_recall = (
+            (preds[is_true_oos] == oos_label_id).mean() if is_true_oos.any() else 0.0
+        )
+        balanced_acc = 0.5 * (in_scope_acc + oos_recall)
+
+        if balanced_acc > best_balanced_acc:
+            best_balanced_acc = balanced_acc
             best_threshold = t
 
-    return float(best_threshold), float(best_acc)
+    return float(best_threshold), float(best_balanced_acc)
 
 
 def main():
@@ -273,10 +304,13 @@ def main():
     print(f"\nBest epoch: {best_epoch} (val_acc={best_val_acc:.4f})")
     model.load_state_dict(best_state_dict)
 
-    print("\nTuning OOS confidence threshold on the validation split...")
+    print("\nTuning OOS confidence threshold on the validation split (objective: balanced_accuracy)...")
     val_probs, val_labels = _predict_probs(model, val_loader)
-    threshold, threshold_val_acc = _tune_threshold(val_probs, val_labels, oos_label_id)
-    print(f"Tuned threshold: {threshold:.2f} (val accuracy with threshold: {threshold_val_acc:.4f})")
+    threshold, threshold_val_balanced_acc = tune_threshold(val_probs, val_labels, oos_label_id)
+    print(
+        f"Tuned threshold: {threshold:.2f} "
+        f"(val balanced accuracy with threshold: {threshold_val_balanced_acc:.4f})"
+    )
 
     # --- Save artifacts -----------------------------------------------
 
@@ -305,6 +339,7 @@ def main():
         "num_classes": num_classes,
         "oos_label_id": oos_label_id,
         "threshold": threshold,
+        "threshold_objective": "balanced_accuracy",
         "seed": SEED,
         "best_epoch": best_epoch,
         "batch_size": BATCH_SIZE,

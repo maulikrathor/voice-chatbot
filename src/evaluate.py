@@ -109,12 +109,18 @@ def _compute_metrics(true_labels: np.ndarray, pred_labels: np.ndarray, oos_label
         zero_division=0,
     )
 
+    # Same objective train.py's tune_threshold() optimizes for -- reported
+    # here too so the test-set number can be compared directly to the
+    # validation number the threshold was picked on.
+    balanced_acc = 0.5 * (in_scope_acc + oos_recall)
+
     return {
         "in_scope_accuracy": float(in_scope_acc),
         "oos_recall": float(oos_recall),
         "oos_precision": float(oos_precision),
         "overall_accuracy": float(overall_acc),
         "macro_f1": float(macro_f1),
+        "balanced_accuracy": float(balanced_acc),
     }
 
 
@@ -134,6 +140,7 @@ def _print_metrics(metrics: dict) -> None:
     print(f"  oos precision:     {metrics['oos_precision']:.4f}")
     print(f"  overall accuracy:  {metrics['overall_accuracy']:.4f}")
     print(f"  macro-F1:          {metrics['macro_f1']:.4f}")
+    print(f"  balanced accuracy: {metrics['balanced_accuracy']:.4f}")
 
 
 def main():

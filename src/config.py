@@ -67,3 +67,19 @@ LABELS_FILENAME = "labels.json"
 CONFIG_FILENAME = "config.json"
 METRICS_FILENAME = "metrics.json"
 TRAINING_HISTORY_FILENAME = "training_history.json"
+
+# --- ASR (src/asr.py) -------------------------------------------------------
+
+# Hugging Face model id for the Whisper ASR pipeline (ARCHITECTURE.md section 4).
+WHISPER_MODEL_ID = "openai/whisper-base.en"
+
+# All audio is prepared to mono float32 at this sample rate before
+# transcription, matching what Whisper expects.
+TARGET_SAMPLE_RATE = 16000
+
+# Silence/length gate thresholds. Whisper hallucinates plausible-looking
+# text on silence/near-silence rather than returning nothing, so clips
+# below these thresholds are rejected before ever reaching the model.
+MIN_AUDIO_DURATION_SEC = 0.5
+MAX_AUDIO_DURATION_SEC = 30.0
+SILENCE_RMS_THRESHOLD = 0.01

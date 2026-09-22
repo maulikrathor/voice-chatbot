@@ -1,0 +1,612 @@
+{
+  "restaurant_reviews": [
+    "I can pull up reviews for a restaurant — in a real deployment this would search a reviews service and summarize ratings.",
+    "I can help you check restaurant reviews — a live version would look up ratings from a reviews platform."
+  ],
+  "nutrition_info": [
+    "I can look up nutrition info for a food item — in a real deployment this would query a nutrition database.",
+    "I can help with nutrition facts — a live version would pull calories and macros from a food database."
+  ],
+  "account_blocked": [
+    "I can check why your account might be blocked — in a real banking app this would look up your account status and explain the hold.",
+    "I can help with a blocked account — a live deployment would check your account flags and walk you through unblocking it."
+  ],
+  "oil_change_how": [
+    "I can walk you through how to change your oil — in a real deployment this would show step-by-step instructions for your vehicle.",
+    "I can explain the oil change process — a live version would pull up a guide tailored to your car model."
+  ],
+  "time": [
+    "Let me check the current time for you.",
+    "I can tell you the time — one moment."
+  ],
+  "weather": [
+    "I can check the weather for you — in a real deployment this would call a weather API for your location.",
+    "I can help with weather — a live version would fetch a forecast from a weather service."
+  ],
+  "redeem_rewards": [
+    "I can help redeem your rewards — in a real banking app this would open the rewards redemption screen.",
+    "I can walk you through redeeming rewards — a live deployment would process the redemption in your account."
+  ],
+  "interest_rate": [
+    "I can look up your interest rate — in a real banking app this would pull the current rate from your account.",
+    "I can help with interest rate info — a live version would check your account terms."
+  ],
+  "gas_type": [
+    "I can look up the right gas type for your vehicle — in a real deployment this would check your car's specs.",
+    "I can help identify your recommended fuel type — a live version would pull this from your vehicle profile."
+  ],
+  "accept_reservations": [
+    "I can check whether a place accepts reservations — in a real deployment this would query the restaurant's booking system.",
+    "I can help confirm if reservations are accepted — a live version would check with the venue directly."
+  ],
+  "smart_home": [
+    "I can help control smart home devices — in a real deployment this would send the command to your connected devices.",
+    "I can pass that along to your smart home system — a live version would actually trigger the device."
+  ],
+  "user_name": [
+    "I can help you set or check your username — in a real deployment this would look up or update your profile.",
+    "I can help with your username — a live version would confirm it from your account settings."
+  ],
+  "report_lost_card": [
+    "I can help report a lost card — in a real banking app this would flag your card as lost and start a replacement.",
+    "I can guide you through reporting a lost card — a live deployment would lock the card and order a new one."
+  ],
+  "repeat": [
+    "Sure — let me know which part you'd like me to repeat.",
+    "Happy to repeat that — could you tell me which part you'd like me to say again?"
+  ],
+  "whisper_mode": [
+    "I can toggle whisper mode — in a real deployment this would switch the assistant to a quieter voice response.",
+    "I can help enable whisper mode — a live version would adjust the voice output volume."
+  ],
+  "what_are_your_hobbies": [
+    "I don't really have hobbies — I'm a demo assistant built to recognize intents and respond with helpful information.",
+    "I'm just a chatbot, so no hobbies here, but I'm happy to help you with tasks!"
+  ],
+  "order": [
+    "I can help you place an order — in a real deployment this would add the item to your cart and start checkout.",
+    "I can start an order for you — a live version would connect to the ordering system."
+  ],
+  "jump_start": [
+    "I can walk you through jump-starting your car — in a real deployment this would show step-by-step safety instructions.",
+    "I can help with a jump start — a live version would guide you through connecting the cables safely."
+  ],
+  "schedule_meeting": [
+    "I can help schedule a meeting — in a real deployment this would create an event on your calendar and invite attendees.",
+    "I can set that up for you — a live version would add it to your calendar system."
+  ],
+  "meeting_schedule": [
+    "I can check your meeting schedule — in a real deployment this would pull your upcoming meetings from your calendar.",
+    "I can look up what's on your calendar — a live version would fetch your meeting list."
+  ],
+  "freeze_account": [
+    "I can help freeze your account — in a real banking app this would place a hold on your account immediately.",
+    "I can start the process of freezing your account — a live deployment would lock it right away."
+  ],
+  "what_song": [
+    "I can tell you what song is playing — in a real deployment this would identify the track from audio input.",
+    "I can help identify a song — a live version would use a music-recognition service."
+  ],
+  "meaning_of_life": [
+    "That's a big question! I'm just a demo intent classifier, so I'll leave the philosophy to you.",
+    "I don't have a real answer for that one — I'm built for practical tasks, not existential ones."
+  ],
+  "restaurant_reservation": [
+    "I can help book a restaurant reservation — in a real deployment this would reserve a table through the restaurant's system.",
+    "I can start a reservation for you — a live version would confirm a table at your chosen time."
+  ],
+  "traffic": [
+    "I can check traffic conditions — in a real deployment this would pull live traffic data for your route.",
+    "I can help with traffic info — a live version would query a maps service for current conditions."
+  ],
+  "make_call": [
+    "I can help place a call — in a real deployment this would dial the number through your phone.",
+    "I can start that call for you — a live version would connect through your device's dialer."
+  ],
+  "text": [
+    "I can help send a text message — in a real deployment this would compose and send it through your phone.",
+    "I can draft that text for you — a live version would send it through your messaging app."
+  ],
+  "bill_balance": [
+    "I can check your bill balance — in a real banking app this would pull the current amount due from your account.",
+    "I can look up your balance due — a live version would fetch it from your billing account."
+  ],
+  "improve_credit_score": [
+    "I can share general tips for improving your credit score — a live version might also analyze your account for specific recommendations.",
+    "I can offer some guidance on building credit — a live version would tailor tips to your credit history."
+  ],
+  "change_language": [
+    "I can help switch the assistant's language — in a real deployment this would change the interface language.",
+    "I can change the language setting — a live version would update your preference right away."
+  ],
+  "no": [
+    "Got it, noted as a no.",
+    "Okay, understood — no it is."
+  ],
+  "measurement_conversion": [
+    "I can convert measurements for you — tell me the value and units and a live version would compute the result.",
+    "I can help with unit conversion — a live version would run the conversion for you."
+  ],
+  "timer": [
+    "I can set a timer for you — in a real deployment this would start a countdown and alert you when it's done.",
+    "I can start that timer — a live version would notify you when time's up."
+  ],
+  "flip_coin": [
+    "Let me flip a coin for you.",
+    "Flipping a coin now."
+  ],
+  "do_you_have_pets": [
+    "I don't have pets — I'm a software assistant, not a living thing!",
+    "No pets for me, I'm just code."
+  ],
+  "balance": [
+    "I can check your account balance — in a real banking app this would pull the current balance from your account.",
+    "I can look that up — a live version would fetch your balance directly."
+  ],
+  "tell_joke": [
+    "Why did the developer go broke? Because they used up all their cache.",
+    "Why do programmers prefer dark mode? Because light attracts bugs.",
+    "I tried to write a joke about UDP, but you might not get it."
+  ],
+  "last_maintenance": [
+    "I can check when your vehicle was last serviced — in a real deployment this would pull the maintenance log from your car's records.",
+    "I can look up your last maintenance date — a live version would check your service history."
+  ],
+  "exchange_rate": [
+    "I can check the exchange rate — in a real deployment this would fetch the current rate from a currency service.",
+    "I can help with currency conversion rates — a live version would pull live rates."
+  ],
+  "uber": [
+    "I can help request a ride — in a real deployment this would connect to a ride-hailing app to book one.",
+    "I can start that ride request — a live version would open your ride-share app."
+  ],
+  "car_rental": [
+    "I can help book a car rental — in a real deployment this would search availability and reserve a vehicle.",
+    "I can start a rental search for you — a live version would check rates and book it."
+  ],
+  "credit_limit": [
+    "I can check your credit limit — in a real banking app this would pull the current limit from your account.",
+    "I can look that up — a live version would fetch your credit limit directly."
+  ],
+  "oos": [
+    "I'm not able to help with that. I'm built to handle things like checking your balance, telling you the weather, or booking a flight — try one of those!",
+    "That's outside what I can do right now. I can help with tasks like setting a timer, checking your account balance, or getting the weather.",
+    "Sorry, I don't have an answer for that. I'm best at things like telling the time, checking flight status, or answering banking questions."
+  ],
+  "shopping_list": [
+    "I can check your shopping list — in a real deployment this would pull the current list from your account.",
+    "I can show you what's on your shopping list — a live version would fetch it live."
+  ],
+  "expiration_date": [
+    "I can check an expiration date — in a real deployment this would pull the expiry info from your card or account records.",
+    "I can look that up — a live version would fetch the exact expiration date."
+  ],
+  "routing": [
+    "I can look up your routing number — in a real banking app this would pull it from your account details.",
+    "I can help with your routing number — a live version would fetch it securely from your account."
+  ],
+  "meal_suggestion": [
+    "I can suggest a meal — in a real deployment this would recommend a recipe based on your preferences.",
+    "I can help with meal ideas — a live version would pull suggestions tailored to you."
+  ],
+  "tire_change": [
+    "I can walk you through changing a tire — in a real deployment this would show step-by-step instructions.",
+    "I can help with a tire change — a live version would guide you through it safely."
+  ],
+  "todo_list": [
+    "I can check your to-do list — in a real deployment this would pull your current tasks from your account.",
+    "I can show you what's on your to-do list — a live version would fetch it live."
+  ],
+  "card_declined": [
+    "I can help figure out why your card was declined — in a real banking app this would check the decline reason on your account.",
+    "I can look into that decline for you — a live version would pull the transaction details."
+  ],
+  "rewards_balance": [
+    "I can check your rewards balance — in a real banking app this would pull your current points or cashback total.",
+    "I can look that up — a live version would fetch your rewards balance directly."
+  ],
+  "change_accent": [
+    "I can change the assistant's voice accent — in a real deployment this would switch the text-to-speech voice.",
+    "I can adjust the accent setting — a live version would update the voice output."
+  ],
+  "vaccines": [
+    "I can check vaccine requirements for travel — in a real deployment this would pull requirements for your destination.",
+    "I can help with vaccine info — a live version would check official travel health guidance."
+  ],
+  "reminder_update": [
+    "I can update a reminder — in a real deployment this would edit the reminder in your account.",
+    "I can change that reminder for you — a live version would save the update."
+  ],
+  "food_last": [
+    "I can check how long food lasts — in a real deployment this would look up shelf-life guidance for that item.",
+    "I can help with food storage times — a live version would pull guidance from a food safety database."
+  ],
+  "change_ai_name": [
+    "I can change what you call me — in a real deployment this would update my display name in your settings.",
+    "I can update my name — a live version would save your preferred name for me."
+  ],
+  "bill_due": [
+    "I can check when your bill is due — in a real banking app this would pull the due date from your account.",
+    "I can look that up — a live version would fetch your next bill due date."
+  ],
+  "who_do_you_work_for": [
+    "I'm a demo assistant built for a speech and language processing lab assignment — not affiliated with any company.",
+    "I was built as an academic project, not for a specific company."
+  ],
+  "share_location": [
+    "I can share your location — in a real deployment this would send your current location through the app.",
+    "I can help share your location — a live version would send it to the requested contact."
+  ],
+  "international_visa": [
+    "I can check visa requirements — in a real deployment this would pull requirements for your destination and nationality.",
+    "I can help with visa info — a live version would check official travel requirements."
+  ],
+  "calendar": [
+    "I can check your calendar — in a real deployment this would pull your events from your calendar app.",
+    "I can look at your schedule — a live version would fetch it from your calendar."
+  ],
+  "translate": [
+    "I can translate that for you — in a real deployment this would run the text through a translation service.",
+    "I can help with translation — a live version would return the translated text."
+  ],
+  "carry_on": [
+    "I can check carry-on baggage rules — in a real deployment this would pull the airline's carry-on policy.",
+    "I can help with carry-on info — a live version would check the specific airline's rules."
+  ],
+  "book_flight": [
+    "I can help book a flight — in a real deployment this would search fares and reserve a seat.",
+    "I can start a flight search for you — a live version would book it through an airline system."
+  ],
+  "insurance_change": [
+    "I can help change your insurance plan — in a real deployment this would update your policy through the insurer's system.",
+    "I can start that insurance change — a live version would submit the update for you."
+  ],
+  "todo_list_update": [
+    "I can update your to-do list — in a real deployment this would add or remove the task in your account.",
+    "I can make that change to your to-do list — a live version would save it."
+  ],
+  "timezone": [
+    "I can check a timezone for you — in a real deployment this would look up the current offset for that location.",
+    "I can help with timezone info — a live version would fetch the exact local time there."
+  ],
+  "cancel_reservation": [
+    "I can help cancel a reservation — in a real deployment this would cancel the booking through the reservation system.",
+    "I can start that cancellation — a live version would confirm it with the venue."
+  ],
+  "transactions": [
+    "I can check your recent transactions — in a real banking app this would pull your transaction history.",
+    "I can show your transactions — a live version would fetch the latest activity from your account."
+  ],
+  "credit_score": [
+    "I can check your credit score — in a real banking app this would pull it from a credit bureau.",
+    "I can look that up — a live version would fetch your current credit score."
+  ],
+  "report_fraud": [
+    "I can help report fraud — in a real banking app this would flag the transaction and start an investigation.",
+    "I can start a fraud report for you — a live version would lock the affected account."
+  ],
+  "spending_history": [
+    "I can check your spending history — in a real banking app this would pull your past transactions and categorize them.",
+    "I can show your spending — a live version would fetch it from your account."
+  ],
+  "directions": [
+    "I can give you directions — in a real deployment this would pull a route from a maps service.",
+    "I can help with directions — a live version would calculate the route for you."
+  ],
+  "spelling": [
+    "I can help you spell that — let me know the word and I'll spell it out.",
+    "I can spell words for you — just tell me which one."
+  ],
+  "insurance": [
+    "I can check your insurance coverage — in a real deployment this would pull your policy details.",
+    "I can help with insurance questions — a live version would look up your coverage."
+  ],
+  "what_is_your_name": [
+    "I'm your voice chatbot demo — you can call me Assistant.",
+    "I don't have a personal name, but I'm happy to be your assistant."
+  ],
+  "reminder": [
+    "I can check your reminders — in a real deployment this would pull your saved reminders.",
+    "I can show your reminders — a live version would fetch them from your account."
+  ],
+  "where_are_you_from": [
+    "I don't have a hometown — I'm a piece of software built for this lab assignment.",
+    "I'm not from anywhere in particular — I'm a chatbot running on a server."
+  ],
+  "distance": [
+    "I can calculate distance between two places — in a real deployment this would query a maps service.",
+    "I can help with distance — a live version would compute it for your route."
+  ],
+  "payday": [
+    "I can check your next payday — in a real deployment this would pull the date from your payroll records.",
+    "I can look that up — a live version would fetch your next pay date."
+  ],
+  "flight_status": [
+    "I can check flight status — in a real deployment this would pull live status from an airline API.",
+    "I can look that up — a live version would fetch the current flight status."
+  ],
+  "find_phone": [
+    "I can help find your phone — in a real deployment this would trigger a find-my-device signal.",
+    "I can help locate your phone — a live version would ping the device."
+  ],
+  "greeting": [
+    "Hi there! How can I help you today?",
+    "Hello! What can I do for you?",
+    "Hey! I'm ready when you are."
+  ],
+  "alarm": [
+    "I can set an alarm for you — in a real deployment this would schedule it on your device.",
+    "I can start that alarm — a live version would set it and notify you at the right time."
+  ],
+  "order_status": [
+    "I can check your order status — in a real deployment this would pull the latest tracking info.",
+    "I can look that up — a live version would fetch your order's current status."
+  ],
+  "confirm_reservation": [
+    "I can confirm your reservation — in a real deployment this would verify the booking with the venue.",
+    "I can check that reservation — a live version would confirm the details for you."
+  ],
+  "cook_time": [
+    "I can check cook time for a dish — in a real deployment this would pull it from a recipe database.",
+    "I can help with cooking time — a live version would look it up for you."
+  ],
+  "damaged_card": [
+    "I can help with a damaged card — in a real banking app this would start a replacement card order.",
+    "I can start that replacement — a live version would order a new card for you."
+  ],
+  "reset_settings": [
+    "I can reset settings — in a real deployment this would restore the app to its defaults.",
+    "I can start a settings reset — a live version would apply it right away."
+  ],
+  "pin_change": [
+    "I can help change your PIN — in a real banking app this would start a secure PIN update.",
+    "I can start that PIN change — a live version would verify your identity first."
+  ],
+  "replacement_card_duration": [
+    "I can check how long a replacement card takes — in a real banking app this would pull the estimated delivery time.",
+    "I can look that up — a live version would give you an exact delivery estimate."
+  ],
+  "new_card": [
+    "I can help you order a new card — in a real banking app this would start the card issuance process.",
+    "I can start that new card request — a live version would begin processing it."
+  ],
+  "roll_dice": [
+    "Let me roll the dice for you.",
+    "Rolling now."
+  ],
+  "income": [
+    "I can check your income records — in a real deployment this would pull the figures from your payroll or account.",
+    "I can look that up — a live version would fetch your income details."
+  ],
+  "taxes": [
+    "I can help with tax questions — in a real deployment this would pull relevant tax info or documents.",
+    "I can help you get started with taxes — a live version would connect to your tax records."
+  ],
+  "date": [
+    "Let me check today's date for you.",
+    "I can tell you the date — one moment."
+  ],
+  "who_made_you": [
+    "I was built as a lab assignment on speech and language processing, using Whisper for speech recognition and a BiLSTM classifier for intent detection.",
+    "I'm a student project — built with Whisper and a BiLSTM model."
+  ],
+  "pto_request": [
+    "I can help submit a PTO request — in a real deployment this would file it through your HR system.",
+    "I can start that PTO request — a live version would submit it for approval."
+  ],
+  "tire_pressure": [
+    "I can check recommended tire pressure — in a real deployment this would pull the spec for your vehicle.",
+    "I can help with tire pressure — a live version would fetch your car's recommended PSI."
+  ],
+  "how_old_are_you": [
+    "I don't have an age — I'm a piece of software, not a living thing.",
+    "I was just built for this assignment, so I don't really have an age."
+  ],
+  "rollover_401k": [
+    "I can help with a 401k rollover — in a real deployment this would start the transfer process with your provider.",
+    "I can start that rollover — a live version would coordinate it with your account provider."
+  ],
+  "pto_request_status": [
+    "I can check your PTO request status — in a real deployment this would pull the latest status from your HR system.",
+    "I can look that up — a live version would fetch your request's current status."
+  ],
+  "how_busy": [
+    "I can check how busy a place is — in a real deployment this would pull live crowd data if available.",
+    "I can look that up — a live version would check current activity levels."
+  ],
+  "application_status": [
+    "I can check your application status — in a real deployment this would pull the latest update from the relevant system.",
+    "I can look that up — a live version would fetch your current application status."
+  ],
+  "recipe": [
+    "I can find a recipe for you — in a real deployment this would search a recipe database.",
+    "I can help with a recipe — a live version would pull one that matches what you're looking for."
+  ],
+  "calendar_update": [
+    "I can update your calendar — in a real deployment this would edit the event in your calendar app.",
+    "I can make that change — a live version would save it to your calendar."
+  ],
+  "play_music": [
+    "I can play music for you — in a real deployment this would start playback through a connected music service.",
+    "I can start that song — a live version would stream it for you."
+  ],
+  "yes": [
+    "Got it, noted as a yes.",
+    "Okay, understood — yes it is."
+  ],
+  "direct_deposit": [
+    "I can help set up direct deposit — in a real banking app this would update your payroll deposit settings.",
+    "I can start that direct deposit setup — a live version would save your account details."
+  ],
+  "credit_limit_change": [
+    "I can help request a credit limit change — in a real banking app this would submit the request for review.",
+    "I can start that request — a live version would submit it to your bank for approval."
+  ],
+  "gas": [
+    "I can check nearby gas stations — in a real deployment this would pull locations from a maps service.",
+    "I can help find gas — a live version would show nearby stations."
+  ],
+  "pay_bill": [
+    "I can help pay a bill — in a real banking app this would process the payment from your account.",
+    "I can start that payment — a live version would submit it through your bank."
+  ],
+  "ingredients_list": [
+    "I can list ingredients for a recipe — in a real deployment this would pull them from a recipe database.",
+    "I can help with ingredients — a live version would fetch the full list for you."
+  ],
+  "lost_luggage": [
+    "I can help report lost luggage — in a real deployment this would file a claim with the airline.",
+    "I can start that luggage report — a live version would submit it to the airline's system."
+  ],
+  "goodbye": [
+    "Goodbye! Talk soon.",
+    "See you later!",
+    "Bye for now!"
+  ],
+  "what_can_i_ask_you": [
+    "I can help with things like checking your account balance, telling you the weather, setting a timer, or booking a flight — just ask!",
+    "I handle tasks across banking, travel, home, and small talk — try asking about the weather, your balance, or a joke."
+  ],
+  "book_hotel": [
+    "I can help book a hotel — in a real deployment this would search availability and reserve a room.",
+    "I can start a hotel search for you — a live version would complete the booking."
+  ],
+  "are_you_a_bot": [
+    "Yes, I'm a chatbot — built for a speech and language processing lab assignment.",
+    "I am indeed a bot, not a human!"
+  ],
+  "next_song": [
+    "I can skip to the next song — in a real deployment this would send the skip command to your music player.",
+    "I can go to the next track — a live version would control your connected player."
+  ],
+  "change_speed": [
+    "I can change the playback speed — in a real deployment this would adjust the speed on your player.",
+    "I can update that speed setting — a live version would apply it right away."
+  ],
+  "plug_type": [
+    "I can check the plug type for a country — in a real deployment this would look up the outlet standard for your destination.",
+    "I can help with plug types — a live version would pull the info for your travel destination."
+  ],
+  "maybe": [
+    "Noted — I'll mark that as a maybe.",
+    "Okay, I'll keep that as undecided for now."
+  ],
+  "w2": [
+    "I can help you find your W-2 — in a real deployment this would pull it from your payroll system.",
+    "I can look that up — a live version would fetch your W-2 document."
+  ],
+  "oil_change_when": [
+    "I can check when your next oil change is due — in a real deployment this would pull it from your vehicle's maintenance schedule.",
+    "I can look that up — a live version would check your car's service records."
+  ],
+  "thank_you": [
+    "You're welcome!",
+    "Happy to help!",
+    "Anytime!"
+  ],
+  "shopping_list_update": [
+    "I can update your shopping list — in a real deployment this would add or remove the item in your account.",
+    "I can make that change — a live version would save it to your shopping list."
+  ],
+  "pto_balance": [
+    "I can check your PTO balance — in a real deployment this would pull it from your HR system.",
+    "I can look that up — a live version would fetch your remaining PTO."
+  ],
+  "order_checks": [
+    "I can help order checks — in a real banking app this would start the check order process.",
+    "I can start that check order — a live version would submit it to be mailed to you."
+  ],
+  "travel_alert": [
+    "I can check travel alerts — in a real deployment this would pull current advisories for your destination.",
+    "I can help with travel alerts — a live version would check official advisory sources."
+  ],
+  "fun_fact": [
+    "Here's one: octopuses have three hearts.",
+    "Fun fact: honey never spoils.",
+    "Did you know a day on Venus is longer than its year?"
+  ],
+  "sync_device": [
+    "I can help sync your device — in a real deployment this would trigger a sync with your connected account.",
+    "I can start that device sync — a live version would connect it right away."
+  ],
+  "schedule_maintenance": [
+    "I can help schedule vehicle maintenance — in a real deployment this would book an appointment with a service center.",
+    "I can start that scheduling — a live version would book the appointment for you."
+  ],
+  "apr": [
+    "I can check your APR — in a real banking app this would pull the rate from your account terms.",
+    "I can look that up — a live version would fetch your current APR."
+  ],
+  "transfer": [
+    "I can help with a transfer — in a real banking app this would open the transfer screen so you can move funds.",
+    "I can start that transfer for you — a live version would move the funds between your accounts."
+  ],
+  "ingredient_substitution": [
+    "I can suggest an ingredient substitution — in a real deployment this would pull suitable swaps from a recipe database.",
+    "I can help find a substitute — a live version would suggest one based on what you're cooking."
+  ],
+  "calories": [
+    "I can check calorie info — in a real deployment this would pull it from a nutrition database.",
+    "I can help with calorie counts — a live version would look up the specific food."
+  ],
+  "current_location": [
+    "I can check your current location — in a real deployment this would use your device's GPS.",
+    "I can share your location — a live version would pull it from your device."
+  ],
+  "international_fees": [
+    "I can check international fees — in a real banking app this would pull the fee schedule from your account terms.",
+    "I can look that up — a live version would fetch the exact fee for international transactions."
+  ],
+  "calculator": [
+    "I can help with a calculation — tell me the numbers and a live version would compute the result.",
+    "I can do that math for you — just give me the expression."
+  ],
+  "definition": [
+    "I can look up a definition — in a real deployment this would query a dictionary service.",
+    "I can help define that word — a live version would pull it from a dictionary source."
+  ],
+  "next_holiday": [
+    "I can check the next holiday — in a real deployment this would pull it from a holiday calendar for your region.",
+    "I can look that up — a live version would fetch the next upcoming holiday."
+  ],
+  "update_playlist": [
+    "I can update your playlist — in a real deployment this would add or remove the track through your music service.",
+    "I can make that playlist change — a live version would save it to your account."
+  ],
+  "mpg": [
+    "I can check your vehicle's fuel efficiency — in a real deployment this would pull MPG data from your car's profile.",
+    "I can look that up — a live version would fetch the MPG for your vehicle."
+  ],
+  "min_payment": [
+    "I can check your minimum payment — in a real banking app this would pull it from your account statement.",
+    "I can look that up — a live version would fetch your current minimum due."
+  ],
+  "change_user_name": [
+    "I can help change your username — in a real deployment this would update it in your account settings.",
+    "I can start that username change — a live version would save the new one."
+  ],
+  "restaurant_suggestion": [
+    "I can suggest a restaurant — in a real deployment this would pull recommendations based on your location and preferences.",
+    "I can help find a place to eat — a live version would suggest nearby options."
+  ],
+  "travel_notification": [
+    "I can set a travel notification on your account — in a real banking app this would flag your card for travel dates.",
+    "I can start that travel notice — a live version would apply it to your account."
+  ],
+  "cancel": [
+    "Okay, I'll cancel that — in a real deployment this would stop the pending action.",
+    "Got it, cancelling now — a live version would confirm the cancellation."
+  ],
+  "pto_used": [
+    "I can check how much PTO you've used — in a real deployment this would pull it from your HR system.",
+    "I can look that up — a live version would fetch your used PTO total."
+  ],
+  "travel_suggestion": [
+    "I can suggest a travel destination — in a real deployment this would recommend places based on your preferences.",
+    "I can help plan a trip — a live version would suggest destinations for you."
+  ],
+  "change_volume": [
+    "I can change the volume — in a real deployment this would adjust the output level on your device.",
+    "I can update that volume setting — a live version would apply it right away."
+  ]
+}
