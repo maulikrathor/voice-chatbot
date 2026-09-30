@@ -10,6 +10,15 @@ deployment's requirements.txt has no gradio in it (see requirements.txt),
 so nothing here may depend on it.
 """
 
+import os
+
+# Streamlit Community Cloud caps memory at ~1 GB; whisper-base.en peaks at
+# ~1072 MB (measured), which exceeds that cap, while whisper-tiny.en peaks at
+# ~861 MB. Default to tiny.en for this deployment target, but let an
+# explicit WHISPER_MODEL_ID env var still override it. Must run before any
+# src.* import, since src/config.py reads the env var at import time.
+os.environ.setdefault("WHISPER_MODEL_ID", "openai/whisper-tiny.en")
+
 import traceback
 
 import streamlit as st
