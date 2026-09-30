@@ -7,10 +7,17 @@ bots instead of any real model, since they only need to exercise
 process_voice's own control flow (empty input / exceptions / ASR
 rejection statuses), not real audio transcription.
 
+These tests check that the handlers wire bot output through to
+src.formatting correctly (by comparing against format_understanding's own
+output, not a duplicated literal string) and manage history/empty-input/
+exception behavior. The exact wording of each formatting case is covered
+once, in tests/test_formatting.py.
+
 Handlers and build_demo live in src/ui.py (not app.py), so importing this
 module -- or app.py itself -- is never required to load any models here.
 """
 
+from src.formatting import format_understanding, top3_dict
 from src.pipeline import VoiceChatbot
 from src.responses import ASR_STATUS_MESSAGES
 from src.ui import build_demo, process_text, process_voice
@@ -70,13 +77,16 @@ class _LowConfidenceBot:
         }
 
 
-def test_process_text_low_confidence_understanding_matches_required_format():
-    _, understanding, top3, response, history = process_text(
-        _LowConfidenceBot(), "some ambiguous query", []
-    )
+def test_process_text_uses_shared_formatting_helpers():
+    bot = _LowConfidenceBot()
+    canned_result = bot.handle_text("some ambiguous query")
 
-    assert understanding == "Low confidence — top guess: Book Hotel (48%), below the 50% threshold"
-    assert top3 == {"Book Hotel": 0.48, "Book Flight": 0.30, "Oos": 0.10}
+    _, understanding, top3, response, history = process_text(bot, "some ambiguous query", [])
+
+    # process_text's outputs must match calling the shared helpers directly
+    # on the same bot result -- i.e. it isn't reformatting things its own way.
+    assert understanding == format_understanding(canned_result, bot.predictor.threshold)
+    assert top3 == top3_dict(canned_result["top3"])
     assert len(history) == 2
 
 
@@ -131,15 +141,15 @@ class _SilentAsrBot:
         }
 
 
-def test_process_voice_asr_rejection_states_the_reason():
+def test_process_voice_asr_rejection_uses_shared_formatting_and_marks_history():
+    bot = _SilentAsrBot()
     fake_audio = (16000, [0.0] * 16000)
+    canned_result = bot.handle_audio(*fake_audio)
 
-    you_said, understanding, top3, response, history = process_voice(
-        _SilentAsrBot(), fake_audio, []
-    )
+    you_said, understanding, top3, response, history = process_voice(bot, fake_audio, [])
 
     assert you_said == ""
-    assert understanding == "Audio rejected — the clip appears to be silence."
+    assert understanding == format_understanding(canned_result, bot.predictor.threshold)
     assert top3 == {}
     assert response == ASR_STATUS_MESSAGES["silent"]
     assert len(history) == 2

@@ -1,0 +1,4 @@
+# Extra dependency to run the Gradio frontend (app.py) locally.
+# Install on top of requirements.txt: pip install -r requirements.txt -r requirements-gradio.txt
+# Not used by the Streamlit Community Cloud deployment.
+gradio==6.27.0

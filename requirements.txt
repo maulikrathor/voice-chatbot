@@ -1,9 +1,18 @@
-# Runtime dependencies only (Hugging Face Space).
-torch
-transformers
-gradio
-librosa
-numpy
-# Windows has no IANA timezone database; zoneinfo needs tzdata to resolve
-# "Asia/Kolkata" (used by the time/date dynamic response handlers).
-tzdata
+# Streamlit Community Cloud runtime dependencies ONLY (streamlit_app.py).
+# No gradio, no datasets, no pytest here -- those are dev/local-only and
+# would eat into the ~1 GB RAM cap for no runtime benefit. Every package is
+# pinned to the version verified locally (see M5 report).
+#
+# CPU-only torch wheel (a few hundred MB) instead of the multi-GB default
+# CUDA wheel -- must stay the first line so pip resolves torch from here.
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+streamlit==1.64.0
+torch==2.14.0
+transformers==5.17.0
+librosa==0.11.0
+soundfile==0.14.0
+numpy==2.4.6
+# Windows/Linux containers may have no IANA timezone database; zoneinfo
+# needs tzdata to resolve "Asia/Kolkata" (time/date dynamic responses).
+tzdata==2026.4

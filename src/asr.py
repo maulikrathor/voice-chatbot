@@ -9,8 +9,11 @@ those clips before they ever reach the model, rather than trusting
 whatever Whisper returns.
 """
 
-import numpy as np
+import io
+
 import librosa
+import numpy as np
+import soundfile as sf
 from transformers import pipeline
 
 from src.config import (
@@ -20,6 +23,22 @@ from src.config import (
     TARGET_SAMPLE_RATE,
     WHISPER_MODEL_ID,
 )
+
+
+def bytes_to_audio(raw_bytes: bytes) -> tuple[int, np.ndarray]:
+    """
+    Decode WAV/FLAC/OGG/MP3 file bytes (e.g. from a Streamlit file
+    uploader) into (sample_rate, float32 ndarray).
+
+    Deliberately does NOT resample -- prepare_audio() is the single place
+    that resamples to TARGET_SAMPLE_RATE, for both frontends.
+    """
+    try:
+        data, sample_rate = sf.read(io.BytesIO(raw_bytes), dtype="float32")
+    except Exception as exc:
+        raise ValueError(f"Could not decode audio bytes: {exc}") from exc
+
+    return sample_rate, data
 
 
 def prepare_audio(sample_rate: int, data: np.ndarray) -> np.ndarray:
@@ -59,6 +78,7 @@ class SpeechRecognizer:
     """Loads the Whisper base.en ASR pipeline once; transcribe() applies the silence/length gate first."""
 
     def __init__(self, model_id: str = WHISPER_MODEL_ID):
+        print(f"Loading Whisper ASR model: {model_id}")
         # device=-1 => CPU, matching the project's CPU-only deployment target.
         self._asr_pipeline = pipeline("automatic-speech-recognition", model=model_id, device=-1)
 

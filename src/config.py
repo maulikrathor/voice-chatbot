@@ -6,6 +6,7 @@ identical between training (train.py) and inference (predict.py, pipeline.py)
 so that preprocessing and model I/O never drift apart.
 """
 
+import os
 from pathlib import Path
 
 # --- Paths -------------------------------------------------------------
@@ -72,7 +73,10 @@ TRAINING_HISTORY_FILENAME = "training_history.json"
 # --- ASR (src/asr.py) -------------------------------------------------------
 
 # Hugging Face model id for the Whisper ASR pipeline (ARCHITECTURE.md section 4).
-WHISPER_MODEL_ID = "openai/whisper-base.en"
+# Overridable via the WHISPER_MODEL_ID env var so a memory-constrained
+# deployment (e.g. Streamlit Community Cloud's ~1 GB RAM) can drop to
+# whisper-tiny.en without a code change.
+WHISPER_MODEL_ID = os.environ.get("WHISPER_MODEL_ID", "openai/whisper-base.en")
 
 # All audio is prepared to mono float32 at this sample rate before
 # transcription, matching what Whisper expects.

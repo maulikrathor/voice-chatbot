@@ -1,15 +1,18 @@
 """
-Tests for src.asr.prepare_audio (pure, no Whisper), src.pipeline.VoiceChatbot
-text path (load_asr=False), and one slow end-to-end ASR smoke test.
+Tests for src.asr.prepare_audio and src.asr.bytes_to_audio (pure, no
+Whisper), src.pipeline.VoiceChatbot text path (load_asr=False), and one
+slow end-to-end ASR smoke test.
 """
 
 import numpy as np
 import pytest
 
-from src.asr import prepare_audio
-from src.config import SILENCE_RMS_THRESHOLD, TARGET_SAMPLE_RATE
+from src.asr import bytes_to_audio, prepare_audio
+from src.config import REPO_ROOT, SILENCE_RMS_THRESHOLD, TARGET_SAMPLE_RATE
 from src.pipeline import VoiceChatbot
 from src.text_preprocessing import normalize_text
+
+SAMPLE_WEATHER_WAV = REPO_ROOT / "samples" / "01_weather.wav"
 
 
 def test_prepare_audio_int16_stereo_resampled_to_mono_16khz():
@@ -52,6 +55,24 @@ def test_prepare_audio_short_clip_has_expected_duration():
 
     measured_duration = len(audio) / TARGET_SAMPLE_RATE
     assert measured_duration == pytest.approx(duration_s, abs=0.01)
+
+
+def test_bytes_to_audio_decodes_wav_without_resampling():
+    raw_bytes = SAMPLE_WEATHER_WAV.read_bytes()
+
+    sample_rate, data = bytes_to_audio(raw_bytes)
+
+    # samples/01_weather.wav is 44.1kHz stereo -- bytes_to_audio must not
+    # resample or downmix (that's prepare_audio's job), so both must be
+    # preserved exactly as recorded.
+    assert sample_rate == 44100
+    assert data.dtype == np.float32
+    assert data.ndim == 2 and data.shape[1] == 2
+
+
+def test_bytes_to_audio_raises_clear_error_on_undecodable_bytes():
+    with pytest.raises(ValueError):
+        bytes_to_audio(b"this is not a valid audio file")
 
 
 def test_handle_text_end_to_end_without_loading_asr():
